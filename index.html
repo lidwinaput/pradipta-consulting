@@ -3,9 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Pradipta Consulting</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* HERO SPECIFIC */
+        .hero {
+            min-height: calc(100vh - 5rem);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-left {
+            padding: 7rem 4rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid var(--border);
+            opacity: 0;
+            animation: slideUp 0.9s ease 0.3s forwards;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--mid);
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--mid);
+            max-width: 420px;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            text-decoration: none;
+            border-bottom: 1px solid var(--charcoal);
+            padding-bottom: 0.25rem;
+            transition: gap 0.2s ease;
+            width: fit-content;
+        }
+
+        .hero-cta:hover { gap: 1.25rem; }
+
+        .hero-right {
+            padding: 7rem 4rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            animation: slideUp 0.9s ease 0.5s forwards;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 4rem;
+        }
+
+        .hero-tag {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            font-weight: 300;
+            color: var(--light);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.3s ease;
+            cursor: default;
+        }
+
+        .hero-tag:first-child { border-top: 1px solid var(--border); }
+        .hero-tag:hover { color: var(--charcoal); }
+
+        .hero-tag span {
+            font-size: 0.68rem;
+            font-family: 'Instrument Sans', sans-serif;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-right: 1rem;
+        }
+
+        .hero-location {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--light);
+        }
+
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-left { padding: 5rem 2rem 3rem; border-right: none; border-bottom: 1px solid var(--border); }
+            .hero-right { padding: 3rem 2rem; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <nav>
+        <a href="index.html" class="nav-logo">Pradipta Consulting</a>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page">
+        <div class="hero">
+            <div class="hero-left">
+                <p class="hero-eyebrow">Independent Consultant · Paris</p>
+                <h1 class="hero-title">Where field reality meets <em>institutional action</em></h1>
+                <p class="hero-desc">I help organizations navigate the human consequences of climate change and corporate accountability — bridging humanitarian expertise with technical ESG practice.</p>
+                <a href="work.html" class="hero-cta">Explore my work →</a>
+            </div>
+            <div class="hero-right">
+                <div class="hero-tags">
+                    <div class="hero-tag"><span>01</span>Corporate Accountability</div>
+                    <div class="hero-tag"><span>02</span>Humanitarian & Development</div>
+                    <div class="hero-tag"><span>03</span>Climate Mobility</div>
+                    <div class="hero-tag"><span>04</span>Human Rights & Business</div>
+                </div>
+                <p class="hero-location">Based in Paris · Available globally</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Pradipta Consulting</p>
+        <p>Paris, France · Available globally</p>
+    </footer>
 </body>
 </html>
