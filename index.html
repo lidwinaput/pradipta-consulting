@@ -4,23 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pradipta Consulting</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
-        /* HERO SPECIFIC */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F5F2EC;
+            --charcoal: #1C1C1A;
+            --mid: #6B6B67;
+            --light: #B8B5AE;
+            --accent: #C4A882;
+            --border: #E0DDD6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--charcoal);
+            font-family: 'Instrument Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.2s forwards;
+        }
+
+        .nav-logo {
+            font-family: 'Fraunces', serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+            color: var(--charcoal);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--mid);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--charcoal);
+        }
+
+        /* HERO */
         .hero {
-            min-height: calc(100vh - 5rem);
+            min-height: 100vh;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            padding-top: 5rem;
         }
 
         .hero-left {
-            padding: 7rem 4rem 4rem;
+            padding: 8rem 4rem 4rem 4rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             border-right: 1px solid var(--border);
             opacity: 0;
-            animation: slideUp 0.9s ease 0.3s forwards;
+            animation: slideUp 0.9s ease 0.4s forwards;
         }
 
         .hero-eyebrow {
@@ -34,11 +112,12 @@
 
         .hero-title {
             font-family: 'Fraunces', serif;
-            font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
             font-weight: 300;
             line-height: 1.1;
             letter-spacing: -0.02em;
             margin-bottom: 2rem;
+            color: var(--charcoal);
         }
 
         .hero-title em {
@@ -50,7 +129,7 @@
             font-size: 1rem;
             color: var(--mid);
             max-width: 420px;
-            line-height: 1.8;
+            line-height: 1.75;
             margin-bottom: 3rem;
         }
 
@@ -67,29 +146,31 @@
             border-bottom: 1px solid var(--charcoal);
             padding-bottom: 0.25rem;
             transition: gap 0.2s ease;
-            width: fit-content;
         }
 
-        .hero-cta:hover { gap: 1.25rem; }
+        .hero-cta:hover {
+            gap: 1.25rem;
+        }
 
         .hero-right {
-            padding: 7rem 4rem 4rem;
+            padding: 8rem 4rem 4rem 4rem;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             opacity: 0;
-            animation: slideUp 0.9s ease 0.5s forwards;
+            animation: slideUp 0.9s ease 0.6s forwards;
         }
 
         .hero-tags {
             display: flex;
             flex-direction: column;
+            gap: 0;
             margin-bottom: 4rem;
         }
 
         .hero-tag {
             font-family: 'Fraunces', serif;
-            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
             font-weight: 300;
             color: var(--light);
             padding: 1rem 0;
@@ -98,11 +179,16 @@
             cursor: default;
         }
 
-        .hero-tag:first-child { border-top: 1px solid var(--border); }
-        .hero-tag:hover { color: var(--charcoal); }
+        .hero-tag:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .hero-tag:hover {
+            color: var(--charcoal);
+        }
 
         .hero-tag span {
-            font-size: 0.68rem;
+            font-size: 0.7rem;
             font-family: 'Instrument Sans', sans-serif;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -117,47 +203,518 @@
             color: var(--light);
         }
 
+        /* SECTION SHARED */
+        section {
+            padding: 6rem 4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-label::after {
+            content: '';
+            display: block;
+            width: 2rem;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        /* ABOUT STRIP */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .about-left h2 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 300;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .about-left h2 em {
+            font-style: italic;
+            color: var(--mid);
+        }
+
+        .about-right p {
+            font-size: 1.05rem;
+            color: var(--mid);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            max-width: 560px;
+        }
+
+        .about-right p strong {
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        /* AREAS OF WORK */
+        .work-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--border);
+        }
+
+        .work-sector {
+            padding: 3rem;
+        }
+
+        .work-sector:first-child {
+            border-right: 1px solid var(--border);
+        }
+
+        .work-sector-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-sector-sub {
+            font-size: 0.75rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .work-services {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .work-services li {
+            font-size: 0.9rem;
+            color: var(--mid);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: color 0.2s ease;
+        }
+
+        .work-services li:hover {
+            color: var(--charcoal);
+        }
+
+        .work-services li::before {
+            content: '→';
+            color: var(--accent);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* THEMATIC */
+        .themes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .theme-tag {
+            font-size: 0.78rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            color: var(--mid);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1.1rem;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+
+        .theme-tag:hover {
+            border-color: var(--charcoal);
+            color: var(--charcoal);
+        }
+
+        /* PORTFOLIO PREVIEW */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border: 1px solid var(--border);
+        }
+
+        .portfolio-item {
+            padding: 2.5rem;
+            border-right: 1px solid var(--border);
+            transition: background 0.2s ease;
+        }
+
+        .portfolio-item:last-child {
+            border-right: none;
+        }
+
+        .portfolio-item:hover {
+            background: rgba(196, 168, 130, 0.05);
+        }
+
+        .portfolio-item-type {
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-item-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.05rem;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .portfolio-item-desc {
+            font-size: 0.85rem;
+            color: var(--mid);
+            line-height: 1.65;
+        }
+
+        .portfolio-item-org {
+            font-size: 0.75rem;
+            color: var(--light);
+            margin-top: 1.5rem;
+            letter-spacing: 0.06em;
+        }
+
+        /* CONTACT */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .contact-left h2 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-left h2 em {
+            font-style: italic;
+            color: var(--mid);
+        }
+
+        .contact-left p {
+            font-size: 0.95rem;
+            color: var(--mid);
+            line-height: 1.75;
+            max-width: 400px;
+        }
+
+        .contact-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: color 0.2s ease;
+            group: true;
+        }
+
+        .contact-link:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        .contact-link-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--light);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-link-value {
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .contact-link-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-link:hover .contact-link-arrow {
+            transform: translate(4px, -4px);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 2rem 4rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            color: var(--light);
+            letter-spacing: 0.06em;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; }
-            .hero-left { padding: 5rem 2rem 3rem; border-right: none; border-bottom: 1px solid var(--border); }
-            .hero-right { padding: 3rem 2rem; }
+            nav {
+                padding: 1.25rem 2rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-left {
+                padding: 7rem 2rem 3rem;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .hero-right {
+                padding: 3rem 2rem;
+            }
+
+            section {
+                padding: 4rem 2rem;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-sector:first-child {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-item {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            footer {
+                padding: 1.5rem 2rem;
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- NAV -->
     <nav>
-        <a href="index.html" class="nav-logo">Pradipta Consulting</a>
+        <a href="#" class="nav-logo">Pradipta Consulting</a>
         <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <div class="page">
-        <div class="hero">
-            <div class="hero-left">
-                <p class="hero-eyebrow">Independent Consultant · Paris</p>
-                <h1 class="hero-title">Where field reality meets <em>institutional action</em></h1>
-                <p class="hero-desc">I help organizations navigate the human consequences of climate change and corporate accountability — bridging humanitarian expertise with technical ESG practice.</p>
-                <a href="work.html" class="hero-cta">Explore my work →</a>
+    <!-- HERO -->
+    <section class="hero" style="border-top: none; padding: 0;">
+        <div class="hero-left">
+            <p class="hero-eyebrow">Independent Consultant · Paris</p>
+            <h1 class="hero-title">Where field reality meets <em>institutional action</em></h1>
+            <p class="hero-desc">I help organizations navigate the human consequences of climate change and corporate accountability — bridging humanitarian expertise with technical ESG practice.</p>
+            <a href="#work" class="hero-cta">Explore my work →</a>
+        </div>
+        <div class="hero-right">
+            <div class="hero-tags">
+                <div class="hero-tag"><span>01</span>Corporate Accountability</div>
+                <div class="hero-tag"><span>02</span>Humanitarian & Development</div>
+                <div class="hero-tag"><span>03</span>Climate Mobility</div>
+                <div class="hero-tag"><span>04</span>Human Rights & Business</div>
             </div>
-            <div class="hero-right">
-                <div class="hero-tags">
-                    <div class="hero-tag"><span>01</span>Corporate Accountability</div>
-                    <div class="hero-tag"><span>02</span>Humanitarian & Development</div>
-                    <div class="hero-tag"><span>03</span>Climate Mobility</div>
-                    <div class="hero-tag"><span>04</span>Human Rights & Business</div>
-                </div>
-                <p class="hero-location">Based in Paris · Available globally</p>
+            <p class="hero-location">Based in Paris · Available globally</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-label">About</div>
+        <div class="about">
+            <div class="about-left">
+                <h2>IO background.<br><em>Private sector</em><br>fluency.</h2>
+            </div>
+            <div class="about-right">
+                <p>I'm Lidwina Putri, an Indonesian sustainability and human rights professional based in Paris. My work starts from a simple conviction: the data only means something if you understand what it represents in human terms.</p>
+                <p>I've done fieldwork with coastal communities displaced by climate change in Indonesia. I've also consolidated Scope 1–3 emissions across 43 countries and coordinated CDP reporting for a global company. <strong>Most people are one or the other. I've been both.</strong></p>
+                <p>That combination — field-grounded, institutionally fluent — is what Pradipta Consulting brings to every engagement.</p>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- AREAS OF WORK -->
+    <section id="work">
+        <div class="section-label">Areas of Work</div>
+        <div class="work-grid">
+            <div class="work-sector">
+                <h3 class="work-sector-title">Corporate Accountability</h3>
+                <p class="work-sector-sub">ESG · Human Rights · Ethics</p>
+                <ul class="work-services">
+                    <li>Sustainability & ESG reporting</li>
+                    <li>Carbon accounting & climate data analysis</li>
+                    <li>Decarbonization strategy & transition planning</li>
+                    <li>Human rights due diligence & ethics</li>
+                    <li>Labour rights & DEI</li>
+                </ul>
+            </div>
+            <div class="work-sector">
+                <h3 class="work-sector-title">Humanitarian & Development</h3>
+                <p class="work-sector-sub">Field · Research · Coordination</p>
+                <ul class="work-services">
+                    <li>Project management</li>
+                    <li>Fundraising & grants management</li>
+                    <li>Monitoring & evaluation</li>
+                    <li>Project & programme reporting</li>
+                    <li>Qualitative research, analysis & policy development</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <p style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); margin-bottom: 1.5rem;">Thematic Areas</p>
+            <div class="themes-grid">
+                <span class="theme-tag">Climate displacement & migration</span>
+                <span class="theme-tag">Climate transition & decarbonization</span>
+                <span class="theme-tag">Human trafficking & modern slavery</span>
+                <span class="theme-tag">Human rights & business</span>
+                <span class="theme-tag">Migration management</span>
+                <span class="theme-tag">Refugee & forced displacement</span>
+                <span class="theme-tag">Environmental justice</span>
+                <span class="theme-tag">Corporate accountability</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+        <div class="section-label">Selected Work</div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <p class="portfolio-item-type">Climate · Field Research</p>
+                <h4 class="portfolio-item-title">Coastal Communities & Climate Displacement</h4>
+                <p class="portfolio-item-desc">Fieldwork and liaison support with coastal communities in Indonesia facing climate-driven displacement. Research at the intersection of environmental change and human mobility.</p>
+                <p class="portfolio-item-org">IOM Indonesia</p>
+            </div>
+            <div class="portfolio-item">
+                <p class="portfolio-item-type">ESG · Reporting</p>
+                <h4 class="portfolio-item-title">CDP Coordination & Scope 1–3 Emissions Consolidation</h4>
+                <p class="portfolio-item-desc">Led CDP reporting coordination contributing to score improvement from A– to A. Consolidated Scope 1–3 emissions data across 43 countries following GHG Protocol.</p>
+                <p class="portfolio-item-org">Sodexo Global Sustainability</p>
+            </div>
+            <div class="portfolio-item">
+                <p class="portfolio-item-type">Event · Coordination</p>
+                <h4 class="portfolio-item-title">Global Migration Film Festival</h4>
+                <p class="portfolio-item-desc">Coordinated 50+ screenings reaching 5,000 attendees. End-to-end event management including logistics, TOR development, and stakeholder coordination.</p>
+                <p class="portfolio-item-org">IOM Indonesia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-label">Contact</div>
+        <div class="contact">
+            <div class="contact-left">
+                <h2>Let's work <em>together</em></h2>
+                <p>Available for consulting engagements, research collaborations, and advisory work across corporate accountability and humanitarian practice.</p>
+            </div>
+            <div class="contact-right">
+                <a href="mailto:hello@pradiptaconsulting.com" class="contact-link">
+                    <div>
+                        <span class="contact-link-label">Email</span>
+                        <span class="contact-link-value">hello@pradiptaconsulting.com</span>
+                    </div>
+                    <span class="contact-link-arrow">↗</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="contact-link">
+                    <div>
+                        <span class="contact-link-label">LinkedIn</span>
+                        <span class="contact-link-value">Lidwina Putri</span>
+                    </div>
+                    <span class="contact-link-arrow">↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <p>© 2026 Pradipta Consulting</p>
         <p>Paris, France · Available globally</p>
     </footer>
+
 </body>
 </html>
