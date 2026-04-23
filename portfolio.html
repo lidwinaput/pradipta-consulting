@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Lidwina Putri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cream: #F5F2EC;
+            --charcoal: #1C1C1A;
+            --mid: #6B6B67;
+            --light: #B8B5AE;
+            --accent: #C4A882;
+            --border: #E0DDD6;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--cream);
+            color: var(--charcoal);
+            font-family: 'Instrument Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.2s forwards;
+        }
+
+        .nav-logo {
+            font-family: 'Fraunces', serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            text-decoration: none;
+        }
+
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+        .nav-links a {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--mid);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--charcoal); }
+
+        /* HEADER */
+        .page-header {
+            padding: 8rem 4rem 3rem;
+            opacity: 0;
+            animation: slideUp 0.9s ease 0.3s forwards;
+        }
+
+        .page-header .eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .page-header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .page-header h1 em { font-style: italic; color: var(--mid); }
+
+        .page-header p {
+            font-size: 0.95rem;
+            color: var(--mid);
+            max-width: 540px;
+            line-height: 1.75;
+        }
+
+        /* FILTER BAR */
+        .filter-bar {
+            padding: 1rem 4rem 2rem;
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border);
+            opacity: 0;
+            animation: slideUp 0.9s ease 0.45s forwards;
+        }
+
+        .filter-btn {
+            font-family: 'Instrument Sans', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--mid);
+            background: transparent;
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            color: var(--charcoal);
+            border-color: var(--charcoal);
+        }
+
+        .filter-btn.active {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        /* LIST */
+        .portfolio-section {
+            padding: 0 4rem 4rem;
+            opacity: 0;
+            animation: slideUp 0.9s ease 0.6s forwards;
+        }
+
+        .portfolio-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-row {
+            display: grid;
+            grid-template-columns: 60px 140px 1.5fr 2fr 1fr auto;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+            transition: padding 0.2s ease, background 0.2s ease;
+        }
+
+        .portfolio-row:hover {
+            background: rgba(196, 168, 130, 0.04);
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .row-number {
+            font-family: 'Fraunces', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .row-year {
+            font-size: 0.78rem;
+            color: var(--light);
+            letter-spacing: 0.04em;
+        }
+
+        .row-title-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .row-type {
+            font-size: 0.65rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .row-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.05rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--charcoal);
+        }
+
+        .row-org {
+            font-size: 0.78rem;
+            color: var(--mid);
+            font-weight: 500;
+            margin-top: 0.15rem;
+        }
+
+        .row-desc {
+            font-size: 0.85rem;
+            color: var(--mid);
+            line-height: 1.6;
+        }
+
+        .row-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+
+        .row-tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.05em;
+            color: var(--light);
+        }
+
+        .row-tag:not(:last-child)::after {
+            content: '·';
+            margin-left: 0.35rem;
+            color: var(--border);
+        }
+
+        .row-link {
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.1rem;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .row-link:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .row-link-none {
+            font-size: 0.68rem;
+            letter-spacing: 0.05em;
+            color: var(--light);
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        /* BACK */
+        .back-link-section {
+            padding: 3rem 4rem 4rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            text-decoration: none;
+            border-bottom: 1px solid var(--charcoal);
+            padding-bottom: 0.3rem;
+            transition: gap 0.2s ease;
+        }
+
+        .back-link:hover { gap: 1.25rem; }
+
+        /* FOOTER */
+        footer {
+            padding: 2rem 4rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            color: var(--light);
+            letter-spacing: 0.06em;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .portfolio-row {
+                grid-template-columns: 40px 110px 1.3fr 1.8fr auto;
+                gap: 1.25rem;
+            }
+            .row-tags { display: none; }
+        }
+
+        @media (max-width: 900px) {
+            nav { padding: 1.25rem 2rem; }
+            .nav-links { gap: 1.5rem; }
+            .page-header { padding: 6rem 2rem 2rem; }
+            .filter-bar { padding: 1rem 2rem 1.5rem; }
+            .portfolio-section { padding: 0 2rem 3rem; }
+            .portfolio-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                padding: 1.5rem 0;
+            }
+            .portfolio-row:hover { padding-left: 0; padding-right: 0; }
+            .row-number { display: none; }
+            .row-year { order: 1; }
+            .row-title-block { order: 2; }
+            .row-desc { order: 3; font-size: 0.82rem; }
+            .row-tags { order: 4; display: flex; margin-top: 0.5rem; }
+            .row-link, .row-link-none { order: 5; align-self: flex-start; margin-top: 0.5rem; }
+            .back-link-section { padding: 2rem; }
+            footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">Lidwina Putri</a>
+        <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#work">Work</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Selected <em>work</em></h1>
+        <p>A collection of engagements across corporate sustainability, research and policy, counter-trafficking, and advocacy.</p>
+    </div>
+
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="corporate">Corporate Accountability</button>
+        <button class="filter-btn" data-filter="research">Research & Policy</button>
+        <button class="filter-btn" data-filter="humanitarian">Humanitarian & Development</button>
+    </div>
+
+    <div class="portfolio-section">
+        <div class="portfolio-list" id="portfolioList">
+
+            <div class="portfolio-row" data-category="corporate">
+                <span class="row-number">01</span>
+                <span class="row-year">2025–2026</span>
+                <div class="row-title-block">
+                    <span class="row-type">ESG · Reporting</span>
+                    <h3 class="row-title">CDP Climate Disclosure Coordination</h3>
+                    <span class="row-org">Sodexo</span>
+                </div>
+                <p class="row-desc">Led Carbon Disclosure Project coordination. Drafted and submitted the full disclosure — score improved from A– to A.</p>
+                <div class="row-tags">
+                    <span class="row-tag">CDP</span>
+                    <span class="row-tag">Climate</span>
+                    <span class="row-tag">Score A</span>
+                </div>
+                <span class="row-link-none">Confidential</span>
+            </div>
+
+            <div class="portfolio-row" data-category="corporate">
+                <span class="row-number">02</span>
+                <span class="row-year">2025–2026</span>
+                <div class="row-title-block">
+                    <span class="row-type">ESG · Climate Data</span>
+                    <h3 class="row-title">Scope 1–3 Emissions Consolidation</h3>
+                    <span class="row-org">Sodexo</span>
+                </div>
+                <p class="row-desc">Consolidated Scope 1–3 GHG emissions across 43 countries following the GHG Protocol. Supported CSRD-aligned KPI tracking.</p>
+                <div class="row-tags">
+                    <span class="row-tag">GHG Protocol</span>
+                    <span class="row-tag">CSRD</span>
+                    <span class="row-tag">43 countries</span>
+                </div>
+                <span class="row-link-none">Confidential</span>
+            </div>
+
+            <div class="portfolio-row" data-category="corporate">
+                <span class="row-number">03</span>
+                <span class="row-year">2025–2026</span>
+                <div class="row-title-block">
+                    <span class="row-type">ESG · Strategy</span>
+                    <h3 class="row-title">Climate Transition Plan — CSRD</h3>
+                    <span class="row-org">Sodexo</span>
+                </div>
+                <p class="row-desc">Contributed to the update of the Climate Transition Plan aligned with CSRD requirements. Fed into the URD.</p>
+                <div class="row-tags">
+                    <span class="row-tag">CSRD</span>
+                    <span class="row-tag">Transition</span>
+                    <span class="row-tag">URD</span>
+                </div>
+                <span class="row-link-none">Confidential</span>
+            </div>
+
+            <div class="portfolio-row" data-category="research">
+                <span class="row-number">04</span>
+                <span class="row-year">2023–2024</span>
+                <div class="row-title-block">
+                    <span class="row-type">Policy Brief</span>
+                    <h3 class="row-title">Social Implications of Climate Transition Policies</h3>
+                    <span class="row-org">UNESCO / Sciences Po</span>
+                </div>
+                <p class="row-desc">Contributed to a G20 policy brief for Brazil's presidency on how decarbonization pathways affect vulnerable populations.</p>
+                <div class="row-tags">
+                    <span class="row-tag">G20</span>
+                    <span class="row-tag">Just transition</span>
+                    <span class="row-tag">Policy</span>
+                </div>
+                <a href="#" class="row-link">Read →</a>
+            </div>
+
+            <div class="portfolio-row" data-category="research">
+                <span class="row-number">05</span>
+                <span class="row-year">2019–2020</span>
+                <div class="row-title-block">
+                    <span class="row-type">Field Research</span>
+                    <h3 class="row-title">Coastal Communities & Climate Displacement</h3>
+                    <span class="row-org">IOM - UN Migration</span>
+                </div>
+                <p class="row-desc">Field support and liaison for external researchers studying climate-driven displacement in coastal Indonesian communities.</p>
+                <div class="row-tags">
+                    <span class="row-tag">Climate mobility</span>
+                    <span class="row-tag">Indonesia</span>
+                    <span class="row-tag">Qualitative</span>
+                </div>
+                <span class="row-link-none">Contributor</span>
+            </div>
+
+            <div class="portfolio-row" data-category="humanitarian">
+                <span class="row-number">06</span>
+                <span class="row-year">2021–2023</span>
+                <div class="row-title-block">
+                    <span class="row-type">Counter-Trafficking</span>
+                    <h3 class="row-title">Counter-Trafficking Programme Coordination</h3>
+                    <span class="row-org">IOM - UN Migration</span>
+                </div>
+                <p class="row-desc">Programme coordination across counter-trafficking initiatives. Victim assistance, coordination with border officials, government, and NGO partners.</p>
+                <div class="row-tags">
+                    <span class="row-tag">Counter-trafficking</span>
+                    <span class="row-tag">Protection</span>
+                    <span class="row-tag">Multi-stakeholder</span>
+                </div>
+                <span class="row-link-none">On request</span>
+            </div>
+
+            <div class="portfolio-row" data-category="humanitarian">
+                <span class="row-number">07</span>
+                <span class="row-year">2020–2023</span>
+                <div class="row-title-block">
+                    <span class="row-type">Safeguarding · Training</span>
+                    <h3 class="row-title">PSEA & Safeguarding Training</h3>
+                    <span class="row-org">IOM - UN Migration</span>
+                </div>
+                <p class="row-desc">Designed and delivered PSEA and safeguarding training for 30+ staff. Contributed to internal protocols and reporting mechanisms.</p>
+                <div class="row-tags">
+                    <span class="row-tag">PSEA</span>
+                    <span class="row-tag">Safeguarding</span>
+                    <span class="row-tag">Training</span>
+                </div>
+                <span class="row-link-none">On request</span>
+            </div>
+
+            <div class="portfolio-row" data-category="humanitarian">
+                <span class="row-number">08</span>
+                <span class="row-year">2017–2022</span>
+                <div class="row-title-block">
+                    <span class="row-type">Advocacy · Event</span>
+                    <h3 class="row-title">Global Migration Film Festival</h3>
+                    <span class="row-org">IOM - UN Migration</span>
+                </div>
+                <p class="row-desc">Full coordination of 50+ screenings reaching 5,000 attendees across Indonesia. End-to-end event management and partnership development.</p>
+                <div class="row-tags">
+                    <span class="row-tag">Event</span>
+                    <span class="row-tag">Advocacy</span>
+                    <span class="row-tag">5,000+</span>
+                </div>
+                <a href="https://www.iom.int/global-migration-film-festival" target="_blank" class="row-link">Festival →</a>
+            </div>
+
+            <div class="portfolio-row" data-category="humanitarian">
+                <span class="row-number">09</span>
+                <span class="row-year">2018–2023</span>
+                <div class="row-title-block">
+                    <span class="row-type">Project Development</span>
+                    <h3 class="row-title">Grants Development & Institutional Reporting</h3>
+                    <span class="row-org">IOM - UN Migration</span>
+                </div>
+                <p class="row-desc">Proposal writing, concept notes, and donor reporting across humanitarian programmes — bilateral agencies and private foundations.</p>
+                <div class="row-tags">
+                    <span class="row-tag">Fundraising</span>
+                    <span class="row-tag">Proposals</span>
+                    <span class="row-tag">Reporting</span>
+                </div>
+                <span class="row-link-none">On request</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="back-link-section">
+        <a href="index.html" class="back-link">← Back to home</a>
+    </div>
+
+    <footer>
+        <p>© 2026 Pradipta Consulting</p>
+        <p>Paris, France · Available globally</p>
+    </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const rows = document.querySelectorAll('.portfolio-row');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                rows.forEach(row => {
+                    if (filter === 'all' || row.dataset.category === filter) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
