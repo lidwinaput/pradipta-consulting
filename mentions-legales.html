@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions légales | Lidwina P. Putri</title>
+  <meta name="description" content="Mentions légales du site lidwinaputri.com.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   lidwinaputri.com — stylesheet (inlined into each page)
+   Fonts : Spectral (display) + Inter (body)
+   Accent: #6366AB periwinkle
+   Base  : #FAF6EF cream
+   ============================================================ */
+
+:root {
+  --cream: #FAF6EF;
+  --tint: #E9EAF6;        /* pale periwinkle — value boxes + currently block */
+  --ink: #1E1E1C;
+  --body: #55524A;
+  --muted: #6B675E;
+  --hairline: #E5DFD2;
+  --accent: #6366AB;      /* periwinkle */
+  --accent-dark: #4F5290; /* hover */
+  --on-accent: #CFD0EA;   /* nav text on the accent bar */
+
+  --serif: 'Spectral', Georgia, serif;
+  --sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+  --max-width: 960px;
+  --pad-x: 24px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  background: var(--cream);
+  color: var(--body);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-dark); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- header ---------- */
+
+.site-header { background: var(--accent); }
+.site-header a:focus-visible { outline-color: var(--cream); }
+
+.site-header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  gap: 16px;
+}
+
+.site-name { font-family: var(--serif); font-size: 17px; color: var(--cream); }
+.site-name:hover { color: #FFFFFF; }
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.site-nav a { color: var(--on-accent); }
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: var(--cream); }
+
+.lang-toggle { color: var(--on-accent); }
+.lang-toggle .active { color: var(--cream); font-weight: 500; }
+.lang-toggle .inactive { color: var(--on-accent); opacity: 0.6; cursor: default; }
+
+/* ---------- sections ---------- */
+
+section { border-bottom: 1px solid var(--hairline); }
+section .wrap { padding-top: 56px; padding-bottom: 56px; }
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* ---------- hero ---------- */
+
+.hero .wrap { padding-top: 84px; padding-bottom: 72px; }
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 6.4vw, 60px);
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+.hero .tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(18px, 2.6vw, 24px);
+  color: var(--accent);
+  margin-top: 12px;
+  max-width: 620px;
+}
+
+.hero .bio { max-width: 560px; margin-top: 26px; }
+
+.hero-actions { margin-top: 32px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+
+.btn {
+  display: inline-block;
+  font-size: 13px;
+  padding: 11px 20px;
+  background: var(--accent);
+  color: var(--cream);
+  border-radius: 2px;
+}
+.btn:hover { background: var(--accent-dark); color: var(--cream); }
+
+.link-underline { font-size: 13px; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+
+/* ---------- services ---------- */
+
+.service-list { border-top: 1px solid var(--hairline); }
+
+.service-row {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.service-row .num { font-size: 12px; color: var(--accent); min-width: 32px; }
+.service-row h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--ink); }
+.service-row p { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+/* ---------- about ---------- */
+
+.about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: start; }
+.about-photo img { width: 100%; height: auto; border-radius: 2px; display: block; }
+.about-text p + p { margin-top: 16px; }
+
+.currently {
+  margin-top: 32px;
+  padding: 20px 24px;
+  border-left: 2px solid var(--accent);
+  background: var(--tint);
+}
+.currently .eyebrow { color: var(--accent-dark); margin-bottom: 8px; }
+.currently p { font-size: 14.5px; }
+
+/* ---------- how i work ---------- */
+
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.value {
+  border: 1px solid var(--hairline);
+  border-top: 2px solid var(--accent);
+  background: var(--tint);
+  padding: 18px 16px;
+  border-radius: 2px;
+}
+.value h3 { font-family: var(--serif); font-weight: 400; font-size: 20px; color: var(--ink); }
+.value p { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+/* ---------- contact ---------- */
+
+.contact h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--ink);
+  max-width: 640px;
+}
+.contact .details { margin-top: 24px; font-size: 15px; }
+.contact .details p + p { margin-top: 6px; }
+.contact .rate-note { margin-top: 18px; font-size: 13.5px; color: var(--muted); }
+
+/* ---------- footer ---------- */
+
+.site-footer { border-bottom: none; }
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 26px;
+  padding-bottom: 34px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* ---------- work page ---------- */
+
+.page-title { font-family: var(--serif); font-weight: 300; font-size: clamp(34px, 5vw, 48px); color: var(--ink); }
+
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+
+.filter-btn {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--body);
+  background: transparent;
+  border: 1px solid #D8D1C2;
+  border-radius: 16px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--cream); }
+
+.streams p { font-size: 14.5px; }
+.streams .stream-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 6px;
+}
+.streams .stream + .stream { margin-top: 22px; }
+.streams .cross-note {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 24px;
+}
+
+.entry { display: flex; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--hairline); }
+.entry .num { font-size: 12px; color: var(--accent); min-width: 32px; padding-top: 4px; }
+.entry .meta {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.entry h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--ink); }
+.entry .desc { font-size: 14.5px; margin-top: 6px; max-width: 620px; }
+.entry .tags { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.entry.hidden { display: none; }
+
+.etc-intro { max-width: 620px; margin-top: 24px; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 720px) {
+  :root { --pad-x: 18px; }
+
+  .site-header .wrap { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .site-nav { gap: 16px; flex-wrap: wrap; }
+
+  .hero .wrap { padding-top: 56px; padding-bottom: 48px; }
+  section .wrap { padding-top: 40px; padding-bottom: 40px; }
+
+  .about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .about-photo { max-width: 240px; }
+
+  /* values stay in one horizontal row on mobile */
+  .values-grid { gap: 8px; }
+  .value { padding: 12px 10px; }
+  .value h3 { font-size: 16px; }
+  .value p { font-size: 12px; }
+
+  .service-row, .entry { gap: 14px; }
+}
+
+/* ---------- deliverables (work page) ---------- */
+
+.deliver {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.deliver .num { font-size: 12px; color: var(--accent); min-width: 32px; }
+.deliver h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--ink); }
+.deliver .what { font-size: 14.5px; margin-top: 6px; max-width: 620px; }
+.deliver .proof {
+  font-size: 13.5px;
+  color: var(--accent-dark);
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+}
+
+.page-intro { font-size: 15.5px; max-width: 620px; margin-top: 16px; }
+
+.writing-row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.writing-row .meta { font-size: 12.5px; color: var(--muted); margin-bottom: 4px; }
+.writing-row h3 { font-family: var(--serif); font-weight: 400; font-size: 18px; }
+
+@media (max-width: 720px) {
+  .deliver { gap: 14px; }
+}
+
+/* ---------- deliverable groups ---------- */
+
+.group { margin-top: 36px; }
+.group:first-of-type { margin-top: 0; }
+.group-label {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--accent-dark);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 4px;
+}
+
+.section-note { font-size: 14.5px; color: var(--muted); margin: -8px 0 18px; }
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="index.html">Lidwina Putri</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="work.html">Work</a>
+        <a href="etc.html">Etc.</a>
+        <span class="lang-toggle">
+          <span class="active">EN</span>&nbsp;|&nbsp;<span class="inactive" title="Version française à venir">FR</span>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h1 class="page-title">Mentions légales</h1>
+
+      <div class="about-text" style="max-width:640px; margin-top:28px;">
+
+        <p class="eyebrow" style="margin-bottom:8px;">Éditeur du site</p>
+        <p>Lidwina Putri, entrepreneur individuel (EI)<br>
+           Paris, France<br>
+           <a href="mailto:lidwinaputri@outlook.com">lidwinaputri@outlook.com</a></p>
+
+        <p class="eyebrow" style="margin:24px 0 8px;">Immatriculation</p>
+        <p>SIREN : 102 612 447<br>
+           SIRET : 102 612 447 00015<br>
+           Activité exercée en profession libérale.<br>
+           TVA non applicable, article 293 B du Code général des impôts.</p>
+
+        <p class="eyebrow" style="margin:24px 0 8px;">Directrice de la publication</p>
+        <p>Lidwina Putri</p>
+
+        <p class="eyebrow" style="margin:24px 0 8px;">Propriété intellectuelle</p>
+        <p>Sauf mention contraire, les contenus publiés sur ce site sont la propriété de
+           Lidwina Putri. Toute reproduction sans autorisation préalable est interdite.</p>
+
+        <p class="eyebrow" style="margin:24px 0 8px;">Données personnelles</p>
+        <!-- EDIT: adapter si vous ajoutez un formulaire ou des outils de mesure d'audience -->
+        <p>Ce site ne collecte aucune donnée personnelle et n'utilise pas de cookies. Les messages
+           envoyés par courriel sont conservés uniquement pour répondre à la demande. Conformément
+           au Règlement général sur la protection des données (RGPD), vous pouvez demander l'accès,
+           la rectification ou la suppression de vos données à l'adresse ci-dessus.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Lidwina P. Putri</span>
+      <span><a href="mentions-legales.html">Mentions légales</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>
