@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prestations | Lidwina P. Putri</title>
+  <meta name="description" content="Ce que je livre, et où je l'ai livré : durabilité en entreprise, pratique humanitaire et de développement, recherche et données.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   lidwinaputri.com — stylesheet (inlined into each page)
+   Fonts : Spectral (display) + Inter (body)
+   Accent: #6366AB periwinkle
+   Base  : #FAF6EF cream
+   ============================================================ */
+
+:root {
+  --cream: #FAF6EF;
+  --tint: #E9EAF6;        /* pale periwinkle — value boxes + currently block */
+  --ink: #1E1E1C;
+  --body: #55524A;
+  --muted: #6B675E;
+  --hairline: #E5DFD2;
+  --accent: #6366AB;      /* periwinkle */
+  --accent-dark: #4F5290; /* hover */
+  --on-accent: #CFD0EA;   /* nav text on the accent bar */
+
+  --serif: 'Spectral', Georgia, serif;
+  --sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+  --max-width: 960px;
+  --pad-x: 24px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  background: var(--cream);
+  color: var(--body);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-dark); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- header ---------- */
+
+.site-header { background: var(--accent); }
+.site-header a:focus-visible { outline-color: var(--cream); }
+
+.site-header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  gap: 16px;
+}
+
+.site-name { font-family: var(--serif); font-size: 17px; color: var(--cream); }
+.site-name:hover { color: #FFFFFF; }
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.site-nav a { color: var(--on-accent); }
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: var(--cream); }
+
+.lang-toggle { color: var(--on-accent); }
+.lang-toggle .active { color: var(--cream); font-weight: 500; }
+.lang-toggle .inactive { color: var(--on-accent); opacity: 0.6; cursor: default; }
+
+/* ---------- sections ---------- */
+
+section { border-bottom: 1px solid var(--hairline); }
+section .wrap { padding-top: 56px; padding-bottom: 56px; }
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* ---------- hero ---------- */
+
+.hero .wrap { padding-top: 84px; padding-bottom: 72px; }
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 6.4vw, 60px);
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+.hero .tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(18px, 2.6vw, 24px);
+  color: var(--accent);
+  margin-top: 12px;
+  max-width: 620px;
+}
+
+.hero .bio { max-width: 560px; margin-top: 26px; }
+
+.hero-actions { margin-top: 32px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+
+.btn {
+  display: inline-block;
+  font-size: 13px;
+  padding: 11px 20px;
+  background: var(--accent);
+  color: var(--cream);
+  border-radius: 2px;
+}
+.btn:hover { background: var(--accent-dark); color: var(--cream); }
+
+.link-underline { font-size: 13px; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+
+/* ---------- services ---------- */
+
+.service-list { border-top: 1px solid var(--hairline); }
+
+.service-row {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.service-row .num { font-size: 12px; color: var(--accent); min-width: 32px; }
+.service-row h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--ink); }
+.service-row p { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+/* ---------- about ---------- */
+
+.about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: start; }
+.about-photo img { width: 100%; height: auto; border-radius: 2px; display: block; }
+.about-text p + p { margin-top: 16px; }
+
+.currently {
+  margin-top: 32px;
+  padding: 20px 24px;
+  border-left: 2px solid var(--accent);
+  background: var(--tint);
+}
+.currently .eyebrow { color: var(--accent-dark); margin-bottom: 8px; }
+.currently p { font-size: 14.5px; }
+
+/* ---------- how i work ---------- */
+
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.value {
+  border: 1px solid var(--hairline);
+  border-top: 2px solid var(--accent);
+  background: var(--tint);
+  padding: 18px 16px;
+  border-radius: 2px;
+}
+.value h3 { font-family: var(--serif); font-weight: 400; font-size: 20px; color: var(--ink); }
+.value p { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+/* ---------- contact ---------- */
+
+.contact h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--ink);
+  max-width: 640px;
+}
+.contact .details { margin-top: 24px; font-size: 15px; }
+.contact .details p + p { margin-top: 6px; }
+.contact .rate-note { margin-top: 18px; font-size: 13.5px; color: var(--muted); }
+
+/* ---------- footer ---------- */
+
+.site-footer { border-bottom: none; }
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 26px;
+  padding-bottom: 34px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* ---------- work page ---------- */
+
+.page-title { font-family: var(--serif); font-weight: 300; font-size: clamp(34px, 5vw, 48px); color: var(--ink); }
+
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+
+.filter-btn {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--body);
+  background: transparent;
+  border: 1px solid #D8D1C2;
+  border-radius: 16px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--cream); }
+
+.streams p { font-size: 14.5px; }
+.streams .stream-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 6px;
+}
+.streams .stream + .stream { margin-top: 22px; }
+.streams .cross-note {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 24px;
+}
+
+.entry { display: flex; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--hairline); }
+.entry .num { font-size: 12px; color: var(--accent); min-width: 32px; padding-top: 4px; }
+.entry .meta {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.entry h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--ink); }
+.entry .desc { font-size: 14.5px; margin-top: 6px; max-width: 620px; }
+.entry .tags { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.entry.hidden { display: none; }
+
+.etc-intro { max-width: 620px; margin-top: 24px; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 720px) {
+  :root { --pad-x: 18px; }
+
+  .site-header .wrap { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .site-nav { gap: 16px; flex-wrap: wrap; }
+
+  .hero .wrap { padding-top: 56px; padding-bottom: 48px; }
+  section .wrap { padding-top: 40px; padding-bottom: 40px; }
+
+  .about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .about-photo { max-width: 240px; }
+
+  /* values stay in one horizontal row on mobile */
+  .values-grid { gap: 8px; }
+  .value { padding: 12px 10px; }
+  .value h3 { font-size: 16px; }
+  .value p { font-size: 12px; }
+
+  .service-row, .entry { gap: 14px; }
+}
+
+/* ---------- deliverables (work page) ---------- */
+
+.deliver {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.deliver .num { font-size: 12px; color: var(--accent); min-width: 32px; }
+.deliver h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--ink); }
+.deliver .what { font-size: 14.5px; margin-top: 6px; max-width: 620px; }
+.deliver .proof {
+  font-size: 13.5px;
+  color: var(--accent-dark);
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+}
+
+.page-intro { font-size: 15.5px; max-width: 620px; margin-top: 16px; }
+
+.writing-row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.writing-row .meta { font-size: 12.5px; color: var(--muted); margin-bottom: 4px; }
+.writing-row h3 { font-family: var(--serif); font-weight: 400; font-size: 18px; }
+
+@media (max-width: 720px) {
+  .deliver { gap: 14px; }
+}
+
+/* ---------- deliverable groups ---------- */
+
+.group { margin-top: 36px; }
+.group:first-of-type { margin-top: 0; }
+.group-label {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--accent-dark);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 4px;
+}
+
+.section-note { font-size: 14.5px; color: var(--muted); margin: -8px 0 18px; }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="index.html">Lidwina Putri</a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="work.html" aria-current="page">Prestations</a>
+        <a href="etc.html">Etc.</a>
+        <span class="lang-toggle">
+          <a href="../work.html">EN</a>&nbsp;|&nbsp;<span class="active">FR</span>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= TITRE ================= -->
+  <section>
+    <div class="wrap">
+      <h1 class="page-title">Prestations</h1>
+      <p class="page-intro">Ce que je livre, et où je l'ai livré.</p>
+      <!-- EDIT : prévoir un portfolio en français si besoin -->
+      <p style="margin-top:14px;"><a class="link-underline" href="../assets/portfolio-sustainability-lidwina-putri.pdf" target="_blank" rel="noopener">Portfolio durabilité et climat (PDF)</a></p>
+    </div>
+  </section>
+
+  <!-- ================= CE QUE JE LIVRE ================= -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Ce que je livre</p>
+
+      <!-- ---------- GROUPE 1 ---------- -->
+      <div class="group">
+        <p class="group-label">Durabilité et redevabilité des entreprises</p>
+
+        <div class="deliver">
+          <span class="num">01</span>
+          <div>
+            <h3>Rapport Carbon Disclosure Project (CDP), de bout en bout</h3>
+            <p class="what">Réponse au questionnaire, collecte des données, coordination interne et
+               soumission, menées comme un seul cycle. Aligné sur les recommandations de la Task
+               Force on Climate-related Financial Disclosures (TCFD).</p>
+            <p class="proof">Pilotage du cycle complet chez Sodexo&nbsp;; score amélioré de A– à A.</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">02</span>
+          <div>
+            <h3>Bilan des émissions de gaz à effet de serre, scopes 1 à 3, en multi-pays</h3>
+            <p class="what">Collecte des données auprès des équipes pays, consolidation et calcul à
+               partir de bases de facteurs d'émission reconnues (ecoinvent, ADEME, DEFRA).</p>
+            <p class="proof">Appui à la consolidation et à l'analyse des données des scopes 1, 2 et
+               3 dans 43 pays chez Sodexo.</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">03</span>
+          <div>
+            <h3>Plan de transition climatique conforme à la CSRD</h3>
+            <p class="what">Plan de transition aligné sur la directive CSRD (Corporate
+               Sustainability Reporting Directive)&nbsp;: leviers de décarbonation et trajectoires
+               de décarbonation calculées à partir des données disponibles, au regard d'un objectif
+               de neutralité carbone.</p>
+            <p class="proof">Élaboration du plan de transition climatique publié dans le Document
+               d'enregistrement universel de Sodexo.</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">04</span>
+          <div>
+            <h3>Évaluation ESG et devoir de vigilance en matière de droits humains</h3>
+            <p class="what">Évaluation des pratiques de durabilité pour les petites et moyennes
+               entreprises. Évaluation des risques liés au travail et aux droits humains dans les
+               opérations et les chaînes d'approvisionnement&nbsp;: pratiques de recrutement,
+               conditions des travailleurs migrants et indicateurs de travail forcé, structurée
+               pour la directive CSDDD (Corporate Sustainability Due Diligence Directive) et pour
+               les évaluations environnementales, sociales et de gouvernance (ESG), dont EcoVadis.</p>
+            <p class="proof">Évaluation de durabilité pour un voyagiste, portant sur l'alignement de
+               ses services avec des pratiques durables. Volet environnement d'une évaluation
+               EcoVadis. Travaux de lutte contre la traite des êtres humains et sur la migration de
+               travail à l'OIM — Organisation internationale pour les migrations, et formation aux
+               Principes directeurs des Nations Unies relatifs aux entreprises et aux droits de
+               l'homme.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- GROUPE 2 ---------- -->
+      <div class="group">
+        <p class="group-label">Pratique humanitaire et de développement</p>
+
+        <div class="deliver">
+          <span class="num">05</span>
+          <div>
+            <h3>Gestion et coordination de programme</h3>
+            <p class="what">Mise en œuvre d'un projet auprès des pouvoirs publics, des bailleurs et
+               de la société civile. Disponible pour des missions d'intérim et des missions au
+               projet.</p>
+            <p class="proof">Gestion de programmes de lutte contre la traite des êtres humains dans
+               les régions frontalières indonésiennes à l'OIM — Organisation internationale pour les
+               migrations, financés par le Département australien de l'Intérieur, le Département
+               d'État américain (Bureau of International Narcotics and Law Enforcement Affairs, et
+               Office to Monitor and Combat Trafficking in Persons) et le Foreign, Commonwealth and
+               Development Office britannique.</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">06</span>
+          <div>
+            <h3>Rapports aux bailleurs, propositions et montage de financements</h3>
+            <p class="what">Rapports de projet pour les bailleurs, les gouvernements et les agences
+               des Nations Unies, y compris dans le cadre du Plan-cadre de coopération des Nations
+               Unies pour le développement durable (UNSDCF) et sur la plateforme UN INFO. Collecte
+               de données institutionnelles, dont le questionnaire institutionnel de l'OIM.
+               Propositions auprès de fonds tels que le Fonds central pour les interventions
+               d'urgence (CERF) et la protection civile et les opérations d'aide humanitaire
+               européennes (ECHO).</p>
+            <p class="proof">Levée de fonds et reporting institutionnel à l'OIM — Organisation
+               internationale pour les migrations.</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">07</span>
+          <div>
+            <h3>Protection et assistance aux victimes</h3>
+            <p class="what">Gestion de cas et parcours d'orientation pour les personnes en situation
+               d'exploitation, fondés sur le Protocole de Palerme et son cadre prévention,
+               protection, poursuites (les 3P). Assistance aux victimes dans les cas de traite ainsi
+               que d'exploitation et d'atteintes sexuelles, y compris l'accompagnement des
+               survivantes et survivants dans leur orientation et leur prise en charge.</p>
+            <p class="proof">Assistance à la protection des migrants à l'OIM — Organisation
+               internationale pour les migrations&nbsp;: identification, assistance, et appui au
+               retour et à la réintégration pour plus de 50 victimes.</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">08</span>
+          <div>
+            <h3>Formation, renforcement des capacités et plaidoyer</h3>
+            <p class="what">Conception et animation de formations pour les équipes et les
+               partenaires, notamment sur l'identification et la prévention de la traite des êtres
+               humains et du trafic illicite de migrants. Campagnes de sensibilisation et de
+               plaidoyer&nbsp;: planification, mobilisation des partenaires et coordination
+               d'événements.</p>
+            <p class="proof">Conception et animation de formations à la prévention de l'exploitation
+               et des atteintes sexuelles (PEAS) et à la sauvegarde, ainsi que de formations sur les
+               migrations et les Objectifs de développement durable, à l'OIM — Organisation
+               internationale pour les migrations. Coordination du Global Migration Film Festival en
+               Indonésie pendant quatre ans (2017-2020)&nbsp;: plus de 50 projections, plus de 5 000
+               spectateurs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- GROUPE 3 ---------- -->
+      <div class="group">
+        <p class="group-label">Transversal aux deux</p>
+
+        <div class="deliver">
+          <span class="num">09</span>
+          <div>
+            <h3>Recherche et analyse de politiques publiques</h3>
+            <p class="what">Recherche documentaire, revue de littérature et analyse qualitative,
+               restituées sous forme de note ou de rapport pouvant servir de base à l'élaboration
+               d'une stratégie. Recherche en sources ouvertes pour vérifier des affirmations et
+               retracer l'information à partir de registres publics, de documents d'entreprise et de
+               sources numériques.</p>
+            <p class="proof">Mission de conseil à l'UNESCO sur les implications sociales des
+               politiques de transition climatique. Master de Sciences Po Paris avec une spécialisation
+               en méthodes de recherche, couvrant la méthodologie qualitative, l'évaluation des
+               programmes sociaux et l'analyse computationnelle des médias en Python. Formation aux
+               techniques de renseignement en sources ouvertes (OSINT) dans le cadre du programme
+               Digital Sherlocks du Digital Forensic Research Lab (DFRLab).</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">10</span>
+          <div>
+            <h3>Analyse et visualisation de données</h3>
+            <p class="what">Des données éparses, issues de plusieurs sources, transformées en
+               quelque chose d'exploitable&nbsp;: analyse, visualisation ou tableau de bord.</p>
+            <p class="proof">Analyse de données d'achats et d'émissions, comparées au référentiel
+               EAT-Lancet de régime alimentaire durable, pour éclairer une stratégie
+               d'approvisionnement. MSc Digital Marketing and Data Analytics à l'IPAG Business
+               School, avec des cours en apprentissage automatique, SQL et manipulation de données
+               avec pandas. Formation en text mining, analyse de réseaux textuels et analyse de
+               réseaux sociaux au Lembaga Penelitian dan Pengembangan Sosial dan Politik (LPPSP),
+               FISIP, Universitas Indonesia.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MODÈLE — nouvelle prestation. Copier dans le groupe voulu,
+             supprimer les marqueurs de commentaire, renuméroter. =====
+      <div class="deliver">
+        <span class="num">11</span>
+        <div>
+          <h3>Nom de la prestation</h3>
+          <p class="what">Ce que reçoit le client, en une ou deux phrases simples.</p>
+          <p class="proof">Où vous l'avez fait, et le résultat.</p>
+        </div>
+      </div>
+      ===== FIN DU MODÈLE ===== -->
+
+    </div>
+  </section>
+
+  <!-- ================= PUBLICATIONS ================= -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Écrits</p>
+
+      <div class="writing-row">
+        <p class="meta">South East Asia Daily · Article · 2026</p>
+        <h3><a href="https://sea-daily.com/why-cooling-the-planet-means-removing-carbon-not-just-emitting-less/" target="_blank" rel="noopener">Why cooling the planet means removing carbon, not just emitting less</a></h3>
+      </div>
+
+      <div class="writing-row">
+        <p class="meta">South East Asia Daily · Article · 2026</p>
+        <h3><a href="https://sea-daily.com/the-fight-for-clean-air-has-many-fronts-one-of-them-is-algae/" target="_blank" rel="noopener">The fight for clean air has many fronts. One of them is algae</a></h3>
+      </div>
+
+      <div class="writing-row">
+        <p class="meta">Kala Advisory · Rapport · 2026</p>
+        <h3><a href="https://kala-advisory.com/wp-content/uploads/2026/07/Sectoral-Spotlight-Climate-Tech.pdf" target="_blank" rel="noopener">Southeast Asia climate technology spotlight</a></h3>
+      </div>
+
+      <div class="writing-row">
+        <p class="meta">Article de recherche · 2024</p>
+        <h3><a href="https://www.researchgate.net/publication/404125030_Nasi_Rumpi_and_the_Holy_Spirit_A_Participant_Observation_Study_of_Indonesian_Catholic_Community_in_Paris" target="_blank" rel="noopener">Nasi, Rumpi, and the Holy Spirit: a participant observation study of the Indonesian Catholic community in Paris</a></h3>
+      </div>
+
+      <div class="writing-row">
+        <p class="meta">Recension · 2024</p>
+        <h3><a href="https://www.researchgate.net/publication/404124577_On_Advocating_and_Fulfilling_Social_and_Economic_Rights" target="_blank" rel="noopener">On advocating and fulfilling social and economic rights</a></h3>
+      </div>
+
+      <!-- ===== MODÈLE — nouvelle publication. Copier, supprimer les
+             marqueurs de commentaire, compléter. =====
+      <div class="writing-row">
+        <p class="meta">Support ou plateforme · année</p>
+        <h3><a href="https://LIEN" target="_blank" rel="noopener">Titre</a></h3>
+      </div>
+      ===== FIN DU MODÈLE ===== -->
+
+    </div>
+  </section>
+
+  <!-- ================= CONTRIBUTIONS À LA RECHERCHE ================= -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Contributions à la recherche</p>
+      <p class="section-note">Publications auxquelles j'ai contribué, par la coordination de projet, l'apport de recherche, la gestion des données et le travail éditorial.</p>
+
+      <div class="writing-row">
+        <p class="meta">OIM — Organisation internationale pour les migrations · 2022</p>
+        <h3><a href="https://indonesia.iom.int/resources/guideline-trafficking-persons-handling" target="_blank" rel="noopener">Guideline for trafficking in persons handling</a></h3>
+      </div>
+
+      <div class="writing-row">
+        <p class="meta">OIM — Organisation internationale pour les migrations · 2022</p>
+        <h3><a href="https://indonesia.iom.int/resources/trafficking-persons-tip-situation-assessment-guidelines" target="_blank" rel="noopener">Trafficking in persons situation assessment guidelines</a></h3>
+      </div>
+
+      <div class="writing-row">
+        <p class="meta">OIM — Organisation internationale pour les migrations · 2021</p>
+        <h3><a href="https://indonesia.iom.int/sites/g/files/tmzbdl1491/files/documents/2023-02/Villages%20Support%20for%20the%20Protection%20and%20Empowerment%20of%20MW_ENG.pdf" target="_blank" rel="noopener">Strengthening villages capacity in the protection and empowerment of Indonesian migrant workers: best practices and service inclusion during the COVID-19 pandemic</a></h3>
+      </div>
+
+      <div class="writing-row">
+        <p class="meta">OIM — Organisation internationale pour les migrations · Note de politique · 2019</p>
+        <h3><a href="https://publications.iom.int/system/files/pdf/policy_brief_series_vol5_issue2.pdf" target="_blank" rel="noopener">Migration, environment and climate change in coastal cities in Indonesia</a></h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TRAVAILLONS ENSEMBLE ================= -->
+  <section class="contact">
+    <div class="wrap">
+      <p class="eyebrow">Travailler ensemble</p>
+      <h2>Un de ces sujets vous intéresse&nbsp;? Écrivez-moi.</h2>
+      <p class="section-note" style="margin-top:18px;">Basée à Paris, j'interviens en Europe et en
+         Asie du Sud-Est, à distance comme sur site. Je travaille en français, en anglais et en
+         indonésien.<br><br>
+         Enregistrée en France en tant qu'entrepreneur individuel (profession libérale),
+         SIRET 102 612 447 00015.</p>
+      <div class="details">
+        <p><a href="mailto:lidwinaputri@outlook.com">lidwinaputri@outlook.com</a></p>
+        <p><a href="https://www.linkedin.com/in/lidwina-p-putri/" rel="me">LinkedIn</a></p>
+      </div>
+      <p class="rate-note">Tarif journalier et références communiqués sur demande.</p>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Lidwina P. Putri</span>
+      <span><a href="../mentions-legales.html">Mentions légales</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>

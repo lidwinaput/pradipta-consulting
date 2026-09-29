@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil | Lidwina P. Putri</title>
-  <meta name="description" content="Consultante indépendante en droits humains et développement durable. Basée à Paris.">
+  <title>Etc. | Lidwina P. Putri</title>
+  <meta name="description" content="Pratique créative — musique.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -294,186 +294,219 @@ section .wrap { padding-top: 56px; padding-bottom: 56px; }
   .service-row, .entry { gap: 14px; }
 }
 
+/* ---------- deliverables (work page) ---------- */
+
+.deliver {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.deliver .num { font-size: 12px; color: var(--accent); min-width: 32px; }
+.deliver h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--ink); }
+.deliver .what { font-size: 14.5px; margin-top: 6px; max-width: 620px; }
+.deliver .proof {
+  font-size: 13.5px;
+  color: var(--accent-dark);
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+}
+
+.page-intro { font-size: 15.5px; max-width: 620px; margin-top: 16px; }
+
+.writing-row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.writing-row .meta { font-size: 12.5px; color: var(--muted); margin-bottom: 4px; }
+.writing-row h3 { font-family: var(--serif); font-weight: 400; font-size: 18px; }
+
+@media (max-width: 720px) {
+  .deliver { gap: 14px; }
+}
+
+/* ---------- deliverable groups ---------- */
+
+.group { margin-top: 36px; }
+.group:first-of-type { margin-top: 0; }
+.group-label {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--accent-dark);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 4px;
+}
+
+.section-note { font-size: 14.5px; color: var(--muted); margin: -8px 0 18px; }
+
+/* ---------- etc page ---------- */
+
+.etc-block { padding: 26px 0; border-bottom: 1px solid var(--hairline); max-width: 640px; }
+.etc-block:last-of-type { border-bottom: none; }
+.etc-block h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 23px;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.etc-block p + p { margin-top: 12px; }
+
+.etc-item { padding: 14px 0; border-bottom: 1px solid var(--hairline); }
+.etc-item:last-child { border-bottom: none; }
+.etc-item h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--ink);
+}
+.etc-item p { font-size: 14.5px; color: var(--muted); margin-top: 4px; }
+
+.embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-top: 12px;
+  border-radius: 2px;
+  max-width: 560px;
+}
+.embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+.audio-track { margin-top: 12px; }
+.audio-track span { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.audio-track audio { width: 100%; max-width: 420px; }
+
 
   </style>
 </head>
 <body>
 
-  <!-- ================= HEADER ================= -->
   <header class="site-header">
     <div class="wrap">
       <a class="site-name" href="index.html">Lidwina Putri</a>
       <nav class="site-nav" aria-label="Navigation principale">
         <a href="work.html">Prestations</a>
-        <a href="etc.html">Etc.</a>
+        <a href="etc.html" aria-current="page">Etc.</a>
         <span class="lang-toggle">
-          <a href="../index.html">EN</a>&nbsp;|&nbsp;<span class="active">FR</span>
+          <a href="../etc.html">EN</a>&nbsp;|&nbsp;<span class="active">FR</span>
         </span>
       </nav>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
+  <section>
     <div class="wrap">
-      <h1>Bonjour, je suis Lidwina Putri.</h1>
-      <p class="tagline">Consultante indépendante en droits humains et développement durable.</p>
+      <h1 class="page-title">Pratique créative</h1>
+      <p class="page-intro">En dehors de mon travail dans les droits humains et le développement
+         durable, je garde une pratique créative comme point d'ancrage, et je la vis par la
+         musique.</p>
 
-      <p class="bio">
-        Plus de sept ans d'expérience dans le secteur associatif et le secteur privé, de la
-        coordination de programmes humanitaires et du montage de financements au reporting ESG et
-        à la comptabilité carbone. <br><br>
-        J'accompagne les organisations dans la mise en œuvre de leurs engagements de durabilité,
-        de leurs obligations en matière de droits humains et de leurs programmes de développement,
-        avec des solutions fondées sur des données probantes et centrées sur les personnes. <br>
-      </p>
+      <p class="page-intro" style="margin-top:16px;">J'ai suivi une formation de piano classique
+         pendant douze ans à la Sekolah Musik Yayasan Pendidikan Musik Jakarta, avant de me tourner
+         vers la musique contemporaine et le jazz, au piano et au chant. Je joue également des
+         instruments traditionnels indonésiens.</p>
 
-      <div class="hero-actions">
-        <!-- EDIT : prévoir un CV en français, par ex. ../assets/cv-lidwina-putri-fr.pdf -->
-        <a class="btn" href="../assets/cv-lidwina-putri.pdf" download>Télécharger le CV (PDF)</a>
-        <a class="link-underline" href="work.html">Voir les prestations →</a>
-      </div>
-    </div>
-  </section>
+      <div class="etc-block" style="border-bottom:none; padding-bottom:0;">
 
-  <!-- ================= CE QUE JE FAIS ================= -->
-  <section id="services">
-    <div class="wrap">
-      <p class="eyebrow">Ce que je fais</p>
-      <div class="service-list">
+        <!-- ===== MODÈLE — une entrée. Copier ce bloc, supprimer les
+             marqueurs de commentaire, compléter le titre et le lien.
 
-        <div class="service-row">
-          <span class="num">01</span>
-          <div>
-            <h3>Recherche et analyse de politiques publiques</h3>
+             Avec un lien :
+             <div class="etc-item">
+               <h3><a href="https://LIEN" target="_blank" rel="noopener">Titre</a></h3>
+               <p>Une ligne de contexte.</p>
+             </div>
+
+             Sans lien :
+             <div class="etc-item">
+               <h3>Titre</h3>
+               <p>Une ligne de contexte.</p>
+             </div>
+
+             Avec une vidéo (utiliser youtube-nocookie.com, et non youtube.com,
+             pour que la page ne dépose aucun cookie avant lecture). VIDEO_ID
+             est la partie après « v= » dans l'URL YouTube :
+             <div class="etc-item">
+               <h3>Titre</h3>
+               <p>Une ligne de contexte.</p>
+               <div class="embed">
+                 <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+                         title="Titre" loading="lazy" allowfullscreen
+                         allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+               </div>
+             </div>
+        ===== FIN DU MODÈLE ===== -->
+
+        <div class="etc-item">
+          <h3>Composition contemporaine</h3>
+          <p>Faeriedance et Rolling with the Blues, extraits de Tales from a Scrapbook, sous la
+             direction de Reynold Silalahi.</p>
+          <!-- les mp3 sont dans assets/ : faeriedance.mp3 et rollinwithblues.mp3 -->
+          <div class="audio-track">
+            <span>Faeriedance</span>
+            <audio controls preload="none" src="../assets/faeriedance.mp3">
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+          </div>
+          <div class="audio-track">
+            <span>Rolling with the Blues</span>
+            <audio controls preload="none" src="../assets/rollinwithblues.mp3">
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
           </div>
         </div>
 
-        <div class="service-row">
-          <span class="num">02</span>
-          <div>
-            <h3>Gestion de projet et reporting</h3>
+        <div class="etc-item">
+          <h3>Musique traditionnelle indonésienne — KTF UI Radha Sarisha</h3>
+          <p>Le groupe de danse et de musique traditionnelles de la Faculté des sciences sociales
+             et politiques (FISIP) de l'Universitas Indonesia. Représentations en Indonésie et une
+             mission culturelle en Europe&nbsp;: Pologne, Allemagne, Suisse et France. J'y joue de
+             l'accordéon, du chant, des percussions et des instruments traditionnels indonésiens
+             comme le talempong, les petits gongs minangkabau de Sumatra occidental, et le tehyan,
+             un instrument à cordes frottées de la culture betawi de Jakarta.</p>
+          <div class="embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/iaKVIuBhOkw"
+                    title="KTF UI Radha Sarisha" loading="lazy" allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
         </div>
 
-        <div class="service-row">
-          <span class="num">03</span>
-          <div>
-            <h3>Reporting développement durable et ESG</h3>
+        <div class="etc-item">
+          <h3>Mezzo-soprano — PSM UI Paragita</h3>
+          <p>Mezzo-soprano au sein du chœur universitaire, avec un répertoire classique,
+             contemporain et indonésien. L'une des pièces indonésiennes est Kalwedo Basudara e,
+             originaire des Moluques.</p>
+          <div class="embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/u8EHKDLDA9M"
+                    title="Kalwedo — PSM UI Paragita" loading="lazy" allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
         </div>
 
-        <div class="service-row">
-          <span class="num">04</span>
-          <div>
-            <h3>Comptabilité carbone et plan de transition climatique</h3>
+        <div class="etc-item">
+          <h3>Poliritmik Oromo Indonesia Project</h3>
+          <p>Une collaboration musicale entre des réfugiés oromo et des étudiants, enseignants et
+             musiciens indonésiens. J'y joue de l'accordéon, des claviers et des chœurs.</p>
+          <div class="embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/mFaQOZ9I5SM"
+                    title="Poliritmik Oromo Indonesia Project" loading="lazy" allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ================= À PROPOS ================= -->
-  <section id="about">
-    <div class="wrap">
-      <p class="eyebrow">À propos</p>
-      <div class="about-grid">
-
-        <div class="about-photo">
-          <img src="../images/lidwina-putri.jpg" alt="Portrait de Lidwina Putri">
-        </div>
-
-        <div class="about-text">
-          <p>Je suis Lidwina Pradipta Putri, professionnelle du développement durable et des droits
-             humains, basée à Paris, avec une expérience professionnelle en Indonésie et en France.</p>
-
-          <p>Plus de cinq ans à l'<b>OIM — Organisation internationale pour les migrations, en
-             Indonésie (2017-2023)</b>&nbsp;: gestion de projet, levée de fonds, reporting
-             institutionnel, programmes de lutte contre la traite des êtres humains incluant
-             l'assistance à la protection des migrants, et formations à la prévention de
-             l'exploitation et des atteintes sexuelles (PEAS) et à la sauvegarde. <br>
-             Une mission de conseil à l'<b>UNESCO (2023-2024)</b> sur les implications sociales des
-             politiques de transition climatique.<br></p>
-
-          <p>Plus récemment, une alternance en développement durable chez <b>Sodexo (2025-2026)</b>,
-             leader mondial de la restauration et des services durables&nbsp;: coordination du
-             Carbon Disclosure Project (CDP), avec une amélioration du score de A– à A,
-             consolidation des émissions des scopes 1, 2 et 3 dans 43 pays, et élaboration du plan
-             de transition climatique conforme à la CSRD.</p><br>
-
-          <p>Je travaille délibérément à l'intersection de ces secteurs&nbsp;: une approche fondée
-             sur des données probantes, centrée sur les personnes, et attachée au principe selon
-             lequel la durabilité ne doit pas se faire au détriment des personnes ou de la planète
-             qu'elle prétend servir.</p>
-
-          <p>Je suis titulaire d'une licence en relations internationales de l'Universitas Indonesia
-             (mention cum laude), d'un master en droits humains et action humanitaire de Sciences Po
-             — Paris School of International Affairs, et d'un MSc en marketing digital et data
-             analytics de l'Institut de préparation à l'administration et à la gestion (IPAG
-             Business School).</p>
-
-        </div>
-
-      </div>
-
-      <div class="currently">
-        <p class="eyebrow">Actuellement</p>
-        <p>
-          Correspondante climat en freelance pour <a href="http://sea-daily.com">South East Asia
-          Daily</a> et Sustainability Associate chez <a href="http://kala-advisory.com">Kala
-          Advisory</a>, à la jonction entre l'Asie du Sud-Est et l'Europe. <br>
-          Exploration de l'économie du bien-être avec la <a href="http://weall.org">Wellbeing
-          Economy Alliance</a>, et recherche sur les liens entre déplacements climatiques et traite
-          des êtres humains avec le <b>Mobility for Climate Policy Research Institute</b>.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= MA FAÇON DE TRAVAILLER ================= -->
-  <section id="values">
-    <div class="wrap">
-      <p class="eyebrow">Ma façon de travailler</p>
-      <div class="values-grid">
-
-        <div class="value">
-          <h3>Les données.</h3>
-          <p>Je pars des données et je les analyse rigoureusement avant de conclure.</p>
-        </div>
-
-        <div class="value">
-          <h3>L'empathie.</h3>
-          <p>J'essaie de voir le travail depuis la position des personnes qu'il concerne.</p>
-        </div>
-
-        <div class="value">
-          <h3>L'action.</h3>
-          <p>Les données et les personnes, traduites en décisions sur lesquelles les organisations
-             agissent réellement.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <p class="eyebrow">Contact</p>
-      <h2>Travaillons ensemble</h2>
-      <p class="rate-note">
-        Disponible pour des missions de conseil en freelance, des collaborations de recherche et
-        des missions d'accompagnement. Tarif journalier communiqué sur demande.</p>
-      <div class="details">
-        <p><a href="mailto:lidwinaputri@outlook.com">lidwinaputri@outlook.com</a></p>
-        <p><a href="https://www.linkedin.com/in/lidwina-p-putri/" rel="me">LinkedIn</a></p>
-      </div>
 
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="wrap">
       <span>© 2026 Lidwina P. Putri</span>
