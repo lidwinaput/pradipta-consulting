@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Lidwina P. Putri </title>
-  <meta name="description" content="Independent consultant working across human rights and sustainability. Based in Paris.">
+  <title>Work | Lidwina P. Putri</title>
+  <meta name="description" content="What I deliver, and where I have delivered it — corporate sustainability, humanitarian and development practice, research and data.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -294,6 +294,53 @@ section .wrap { padding-top: 56px; padding-bottom: 56px; }
   .service-row, .entry { gap: 14px; }
 }
 
+/* ---------- deliverables (work page) ---------- */
+
+.deliver {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.deliver .num { font-size: 12px; color: var(--accent); min-width: 32px; }
+.deliver h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--ink); }
+.deliver .what { font-size: 14.5px; margin-top: 6px; max-width: 620px; }
+.deliver .proof {
+  font-size: 13.5px;
+  color: var(--accent-dark);
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+}
+
+.page-intro { font-size: 15.5px; max-width: 620px; margin-top: 16px; }
+
+.writing-row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.writing-row .meta { font-size: 12.5px; color: var(--muted); margin-bottom: 4px; }
+.writing-row h3 { font-family: var(--serif); font-weight: 400; font-size: 18px; }
+
+@media (max-width: 720px) {
+  .deliver { gap: 14px; }
+}
+
+/* ---------- deliverable groups ---------- */
+
+.group { margin-top: 36px; }
+.group:first-of-type { margin-top: 0; }
+.group-label {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--accent-dark);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 4px;
+}
+
   </style>
 </head>
 <body>
@@ -303,157 +350,187 @@ section .wrap { padding-top: 56px; padding-bottom: 56px; }
     <div class="wrap">
       <a class="site-name" href="index.html">Lidwina Putri</a>
       <nav class="site-nav" aria-label="Main">
-        <a href="work.html">Work</a>
+        <a href="work.html" aria-current="page">Work</a>
         <a href="etc.html">Etc.</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#contact">Contact</a>
         <span class="lang-toggle">
-          <span class="active">EN</span>&nbsp;|&nbsp;<!--
-            FR pending. When fr/index.html exists, replace the span below with:
-            <a href="fr/index.html">FR</a>
-          --><span class="inactive" title="Version française à venir">FR</span>
+          <span class="active">EN</span>&nbsp;|&nbsp;<span class="inactive" title="Version française à venir">FR</span>
         </span>
       </nav>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
+  <!-- ================= TITLE ================= -->
+  <section>
     <div class="wrap">
-      <h1>Hello, I&rsquo;m Lidwina Putri.</h1>
-      <p class="tagline">Independent consultant working across human rights and sustainability.</p>
-
-      <!-- EDIT: your bio, 2–3 plain first-person sentences -->
-      <p class="bio">
-        7+ years across non-profit and private sector, from humanitarian programme coordination and grants development to technical ESG reporting and carbon accounting. <br><br>
-        I help organizations deliver on their sustainability commitments, human rights obligations, and development programmes – with solutions that are evidence-based and people-centred. <br>
-      </p>
-
-      <div class="hero-actions">
-        <!-- EDIT: put your CV at assets/cv-lidwina-putri.pdf -->
-        <a class="btn" href="assets/cv-lidwina-putri.pdf" download>Download CV (PDF)</a>
-        <a class="link-underline" href="work.html">See the work →</a>
-      </div>
+      <h1 class="page-title">Work</h1>
+      <p class="page-intro">What I deliver, and where I have delivered it.</p>
     </div>
   </section>
 
-  <!-- ================= WHAT I DO ================= -->
-  <section id="services">
+  <!-- ================= WHAT I DELIVER =================
+       Three groups. Each block: deliverable, what the client receives,
+       and one proof line. To add one, copy a <div class="deliver"> block
+       and renumber. Keep numbering continuous across groups.
+  -->
+  <section>
     <div class="wrap">
-      <p class="eyebrow">What I do</p>
-      <div class="service-list">
+      <p class="eyebrow">What I deliver</p>
 
-        <div class="service-row">
+      <!-- ---------- GROUP 1 ---------- -->
+      <div class="group">
+        <p class="group-label">Corporate sustainability and accountability</p>
+
+        <div class="deliver">
           <span class="num">01</span>
           <div>
-            <h3>Research and policy analysis</h3>
-            <!-- EDIT: one plain line -->
+            <h3>Carbon Disclosure Project (CDP) disclosure, start to finish</h3>
+            <p class="what">Questionnaire response, evidence gathering, internal coordination
+               and submission — run as one cycle rather than a scramble at the deadline.</p>
+            <p class="proof">Led the full cycle at Sodexo; score improved from A– to A.</p>
           </div>
         </div>
 
-        <div class="service-row">
+        <div class="deliver">
           <span class="num">02</span>
           <div>
-            <h3>Project management and reporting</h3>
+            <h3>Scope 1–3 greenhouse gas inventory across multi-country operations</h3>
+            <p class="what">Data collection from country teams, consolidation, and resolution
+               of the inconsistencies that surface in every multi-market inventory.</p>
+            <p class="proof">Consolidated and analysed Scope 1, 2 and 3 datasets across 43 countries.</p>
           </div>
         </div>
 
-        <div class="service-row">
+        <div class="deliver">
           <span class="num">03</span>
           <div>
-            <h3>Sustainability and ESG reporting</h3>
+            <h3>CSRD-aligned climate transition plan</h3>
+            <p class="what">A transition plan written to hold up in a regulated filing, not a
+               slide deck — targets, levers, and the narrative that connects them to the data.</p>
+            <p class="proof">Produced the climate transition plan published in Sodexo's Universal
+               Registration Document.</p>
           </div>
         </div>
+      </div>
 
-        <div class="service-row">
+      <!-- ---------- GROUP 2 ---------- -->
+      <div class="group">
+        <p class="group-label">Humanitarian and development practice</p>
+
+        <div class="deliver">
           <span class="num">04</span>
           <div>
-            <h3>Carbon accounting and climate strategy/transition planning</h3>
+            <h3>Programme management and coordination</h3>
+            <p class="what">Running a project across government, donor and civil-society
+               stakeholders, including in protection-sensitive settings. Available for surge
+               capacity, interim coordination and project-based assignments.</p>
+            <p class="proof">Six years managing counter-trafficking programmes in Indonesian
+               border regions at IOM — UN Migration.</p>
           </div>
         </div>
 
+        <div class="deliver">
+          <span class="num">05</span>
+          <div>
+            <h3>Donor reporting, proposals and grants development</h3>
+            <p class="what">Institutional reports donors accept, and proposals built around what
+               a programme can realistically deliver.</p>
+            <p class="proof">Fundraising and institutional reporting across six years at IOM.</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">06</span>
+          <div>
+            <h3>Training and capacity building</h3>
+            <p class="what">Training designed and delivered for staff and partners, including on
+               sensitive subjects that need careful handling in the room.</p>
+            <p class="proof">Delivered Prevention of Sexual Exploitation and Abuse (PSEA) and
+               safeguarding training at IOM.</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">07</span>
+          <div>
+            <h3>Advocacy campaigns</h3>
+            <p class="what">Campaigns built around a public audience rather than a report —
+               planning, partners, and the logistics that make them happen.</p>
+            <p class="proof">Coordinated the Global Migration Film Festival across Indonesia —
+               50+ screenings, 5,000+ attendees.</p>
+          </div>
+        </div>
       </div>
+
+      <!-- ---------- GROUP 3 ---------- -->
+      <div class="group">
+        <p class="group-label">Across both</p>
+
+        <div class="deliver">
+          <span class="num">08</span>
+          <div>
+            <h3>Policy research and briefs</h3>
+            <p class="what">Desk research, analysis, and a written brief that reaches a conclusion
+               someone can act on.</p>
+            <p class="proof">Consultancy at UNESCO on the social implications of climate
+               transition policies.</p>
+          </div>
+        </div>
+
+        <div class="deliver">
+          <span class="num">09</span>
+          <div>
+            <h3>Data analysis and dashboards</h3>
+            <p class="what">Messy multi-source data turned into something a team can read —
+               analysis, and a dashboard where recurring reporting justifies one.</p>
+            <!-- EDIT: if the Sodexo dashboard was Power BI, name the tool here -->
+            <p class="proof">Built a reporting dashboard for Sodexo's sustainability team.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== TEMPLATE — new deliverable. Copy inside the group you want,
+             delete the surrounding comment markers, renumber. =====
+      <div class="deliver">
+        <span class="num">10</span>
+        <div>
+          <h3>Deliverable name</h3>
+          <p class="what">What the client receives, in one or two plain sentences.</p>
+          <p class="proof">Where you did it, and the result.</p>
+        </div>
+      </div>
+      ===== END TEMPLATE ===== -->
+
     </div>
   </section>
 
-  <!-- ================= ABOUT ================= -->
-  <section id="about">
+  <!-- ================= PUBLISHED WRITING ================= -->
+  <section>
     <div class="wrap">
-      <p class="eyebrow">About</p>
-      <div class="about-grid">
+      <p class="eyebrow">Writing</p>
 
-        <div class="about-photo">
-          <!-- EDIT: compress to 150–300 KB, upload to images/ -->
-          <img src="images/lidwina-putri.jpg" alt="Portrait of Lidwina Putri">
-        </div>
-
-        <div class="about-text">
-          <!-- EDIT: your About copy -->
-          <p> I'm Lidwina Pradipta Putri, a sustainability and human rights professional based in Paris, with working experience in Indonesia and France.</p>
-            
-          <p>5+ years at <b>IOM - UN Migration in Indonesia (2017-2023)</b> – project management, fundraising, institutional reporting, counter-trafficking programmes including migrant protection assistance, and Prevention of Sexual Exploitation and Abuse/safeguarding training. <br>
-            A consultancy at <b>UNESCO (2023-2024)</b> on the social implications of climate transition policies.<br></p>
-
-<p>Most recently, a sustainability apprenticeship at <b>Sodexo (2025–2026)</b>, a global leader in sustainable food and services — Carbon Disclosure Project coordination (score improvement A– to A), Scope 1, 2, and 3 emissions consolidation across 43 countries, and CSRD-aligned climate transition planning.</p><br>
-<p>I work across these sectors deliberately — evidence-based, people-centred, and committed to the principle that sustainability must not come at the cost of the people or planet it claims to serve.</p>
-
-<p>I hold a Bachelor of Social Sciences (S.Sos) in International Relations from the University of Indonesia (cum laude), a Master's in Human Rights and Humanitarian Action from Sciences Po - Paris School of International Affairs, and an MSc in Digital Marketing and Data Analytics from the Institut de Préparation à l'Administration et à la Gestion (IPAG Business School).</p>
-
-        </div>
-
+      <div class="writing-row">
+        <p class="meta">South East Asia Daily · 2026</p>
+        <!-- EDIT: real title and link -->
+        <h3><a href="http://sea-daily.com" target="_blank" rel="noopener">[Article title]</a></h3>
       </div>
 
-      <div class="currently">
-        <p class="eyebrow">Currently</p>
-        <p>
-          Freelance writing as Climate Correspondent in <a href="http://sea-daily.com">South East Asia Daily</a> and as a Sustainability Associate in <a href="http://kala-advisory.com">Kala
-          Advisory</a>, bridging Southeast Asia and Europe · <br>
-          Exploring well-being economy with <a href="http://weall.org">Wellbeing Economy Alliance</a> and researching on the nexus between climate displacement & human trafficking with <b>Mobility for Climate Policy Research Institute</b> </p>
+      <div class="writing-row">
+        <!-- EDIT: research paper — link the title to ResearchGate -->
+        <p class="meta">ResearchGate · year</p>
+        <h3><a href="https://www.researchgate.net/" target="_blank" rel="noopener">[Paper title]</a></h3>
       </div>
-    </div>
-  </section>
 
-  <!-- ================= HOW I WORK ================= -->
-  <section id="values">
-    <div class="wrap">
-      <p class="eyebrow">How I work</p>
-      <div class="values-grid">
-
-        <div class="value">
-          <h3>Data.</h3>
-          <!-- EDIT: one plain line, your voice -->
-          <p>I work from evidence, and analyse it properly before drawing conclusions.</p>
-        </div>
-
-        <div class="value">
-          <h3>Empathy.</h3>
-          <p>I try to see the work from the position of the people it affects.</p>
-        </div>
-
-        <!-- EDIT: third word still open — alternatives you liked:
-             Follow-through. / Consequence. / Delivery. / Practice. -->
-        <div class="value">
-          <h3>Action.</h3>
-          <p>Evidence and people, turned into decisions organisations actually act on.</p>
-        </div>
-
+      <!-- ===== TEMPLATE — new piece. Works for an article or a paper:
+             for a paper, put the journal or platform in the meta line and
+             link the title to ResearchGate. Copy, delete the comment
+             markers, fill in. =====
+      <div class="writing-row">
+        <p class="meta">Outlet or platform · year</p>
+        <h3><a href="https://LINK-TO-PIECE" target="_blank" rel="noopener">Title</a></h3>
       </div>
-    </div>
-  </section>
+      ===== END TEMPLATE ===== -->
 
-  <!-- ================= CONTACT ================= -->
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <p class="eyebrow">Contact</p>
-      <h2>Let's work together</h2>
-      <p class="rate-note">
-Available for freelance consulting engagements, research collaborations, and advisory work. Day rate available upon requests. </p>
-      <div class="details">
-        <!-- EDIT: your real email -->
-        <p><a href="mailto:lidwinaputri@outlook.com">lidwinaputri@outlook.com</a></p>
-        <!-- EDIT: your LinkedIn handle -->
-        <p><a href="https://www.linkedin.com/in/lidwina-p-putri/" rel="me">LinkedIn</a></p>
-      </div>
-      
     </div>
   </section>
 
@@ -461,10 +538,8 @@ Available for freelance consulting engagements, research collaborations, and adv
   <footer class="site-footer">
     <div class="wrap">
       <span>© 2026 Lidwina P. Putri</span>
-      <span><a href="mentions-legales.html">Mentions légales</a></span>
     </div>
   </footer>
 
 </body>
 </html>
-
